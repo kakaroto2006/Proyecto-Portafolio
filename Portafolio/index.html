@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Portafolio Oscar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="layout">
+
+    <!-- ======= SIDEBAR ======= -->
+    <aside class="sidebar" aria-label="Menú lateral">
+        <h1 class="sidebar__title">Portafolio Oscar</h1>
+        <p class="sidebar__subtitle">Técnico en desarrollo de aplicaciones web</p>
+
+        <p class="sidebar__text">Diseño experiencias digitales con atención al detalle..</p>
+
+        <nav class="sidebar__nav" aria-label="Navegación principal">
+            <ul class="sidebar__menu">
+                <li><a href="#biografia" class="sidebar__link sidebar__link--active" aria-current="page">Biografía</a></li>
+                <li><a href="#experiencia" class="sidebar__link">Experiencia laboral</a></li>
+                <li><a href="#habilidades" class="sidebar__link">Habilidades técnicas</a></li>
+                <li><a href="#contactos" class="sidebar__link">Contactos</a></li>
+                <li><a href="#redes" class="sidebar__link">Redes Sociales</a></li>
+            </ul>
+        </nav>
+
+    </aside>
+
+    <!-- ======= CONTENIDO ======= -->
+    <main class="content">
+
+        <!-- BIOGRAFÍA -->
+        <section id="biografia" class="section section--active">
+            <h2 class="section__title">Biografía</h2>
+            <p class="section__text">
+                Estudié en Liceo San Juan donde me gradué de informática y ahora estoy estudiando 
+                en CEUTEC donde estoy cursando mi carrera universitaria. Este es mi primer año 
+                y primero Dios a finales del 2026 estaría graduándome de mi carrera técnica.
+            </p>
+            <p class="section__text">
+                Actualmente estudio Técnico en Desarrollo de Aplicaciones Web.
+            </p>
+        </section>
+
+        <!-- EXPERIENCIA LABORAL -->
+        <section id="experiencia" class="section">
+            <h2 class="section__title">Experiencia Laboral</h2>
+
+            <div class="experience">
+                <div class="experience__item">
+                    <h3 class="experience__role">Bootstrap</h3>
+                    <p class="experience__company">Bootstrap</p>
+                    <p class="experience__desc">
+                       Lo apliqué en un proyecto del periodo pasado en Diseño de Aplicaciones Web.
+                    </p>
+                </div>
+
+                <div class="experience__item">
+                    <h3 class="experience__role">Pseint, JavaScript, C++</h3>
+                    <p class="experience__company">Lenguajes aprendidos</p>
+                    <p class="experience__desc">
+                        Estos lenguajes los utilicé en periodos pasados para diferentes proyectos.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HABILIDADES TÉCNICAS -->
+        <section id="habilidades" class="section">
+            <h2 class="section__title">Habilidades Técnicas</h2>
+            <p class="section__text">
+                - HTML, CSS, JavaScript <br>
+                - Diseño de aplicaciones web <br>
+                - Sistema de reservas de cine <br>
+                - Manejo un poco de frameworks (Bootstrap)
+            </p>
+        </section>
+
+        <!-- CONTACTOS -->
+        <section id="contactos" class="section">
+            <h2 class="section__title">Contactos</h2>
+
+            <p class="section__text">Puedes comunicarte conmigo por los siguientes medios:</p>
+
+            <ul class="section__text">
+                <li><strong>Correo:</strong> oscarucles0404@gmail.com</li>
+                <li><strong>Teléfono:</strong> +504 9712 6728</li>
+            </ul>
+        </section>
+
+        <!-- REDES SOCIALES (NUEVA SECCIÓN) -->
+        <section id="redes" class="section">
+            <h2 class="section__title">Redes Sociales</h2>
+
+            <p class="section__text">Mis redes donde puedes ver mis proyectos y contenido:</p>
+
+            <ul class="section__text">
+                <li><a href="https://github.com/" target="_blank">GitHub</a></li>
+               
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- ======= FOOTER ======= -->
+    <footer class="footer">
+        <p>Developed by @TU_USUARIO</p>
+    </footer>
+
+    <!-- ======= JAVASCRIPT PARA CAMBIAR SECCIONES ======= -->
+    <script>
+        const links = document.querySelectorAll(".sidebar__link");
+        const sections = document.querySelectorAll(".section");
+
+        links.forEach(link => {
+            link.addEventListener("click", e => {
+                e.preventDefault();
+
+                // Quitar activo
+                links.forEach(l => {
+                    l.classList.remove("sidebar__link--active");
+                    l.removeAttribute("aria-current");
+                });
+
+                // Activar actual
+                link.classList.add("sidebar__link--active");
+                link.setAttribute("aria-current", "page");
+
+                // Ocultar secciones
+                sections.forEach(section => section.classList.remove("section--active"));
+
+                // Mostrar sección objetivo
+                const target = document.querySelector(link.getAttribute("href"));
+                target.classList.add("section--active");
+            });
+        });
+    </script>
+
+</body>
+</html>
+
+</html>
+
+
